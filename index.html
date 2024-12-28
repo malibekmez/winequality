@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Şarap Kalitesi Tahmin</title>
+</head>
+<body>
+    <h1>Şarap Kalitesi Tahminine Hoşgeldiniz!</h1>
+    <form action="/predict" method="post">
+        <label for="sabit_asitlik">Sabit Asitlik (g/L):</label>
+        <input type="text" name="sabit_asitlik" required><br>
+        
+        <label for="ucucu_asitlik">Uçucu Asitlik (g/L):</label>
+        <input type="text" name="ucucu_asitlik" required><br>
+
+        <label for="artik_seker">Artık Şeker (g/L):</label>
+        <input type="text" name="artik_seker" required><br>
+
+        <label for="klorur">Klorürler (g/L):</label>
+        <input type="text" name="klorur" required><br>
+
+        <label for="toplam_sulfurdioxit">Toplam SO₂ (mg/L):</label>
+        <input type="text" name="toplam_sulfurdioxit" required><br>
+
+        <label for="yoğunluk">Yoğunluk (g/cm³):</label>
+        <input type="text" name="yoğunluk" required><br>
+
+        <label for="ph">pH:</label>
+        <input type="text" name="ph" required><br>
+
+        <label for="sülfatlar">Sülfatlar (g/L):</label>
+        <input type="text" name="sülfatlar" required><br>
+
+        <label for="alkol">Alkol (%):</label>
+        <input type="text" name="alkol" required><br>
+
+        <input type="submit" value="Tahmin Yap">
+    </form>
+
+    {% if tahmin_sonucu %}
+        <h2>Tahmin Sonucu: {{ tahmin_sonucu }}</h2>
+    {% endif %}
+</body>
+</html>
